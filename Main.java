@@ -1,32 +1,14 @@
 public class Main {
     public static void main(String[] args) {
         Cube cube = new Cube();
-
-        System.out.println("Initial Cube:");
+        
+        Scrambler scrambler = new Scrambler();
+        System.out.println("Initial solved cube:");
         cube.printCube();
-
-        System.out.println("After moveU:");
-        Move.moveU(cube);
-        cube.printCube();
-
-        System.out.println("After moveD:");
-        Move.moveD(cube);
-        cube.printCube();
-
-        System.out.println("After moveL:");
-        Move.moveL(cube);
-        cube.printCube();
-
-        System.out.println("After moveR:");
-        Move.moveR(cube);
-        cube.printCube();
-
-        System.out.println("After moveF:");
-        Move.moveF(cube);
-        cube.printCube();
-
-        System.out.println("After moveB:");
-        Move.moveB(cube);
+        scrambler.scramble(cube, 15);
+        System.out.println("\nScramble moves:");
+        System.out.println(String.join(" ", scrambler.getMoveHistory()));
+        System.out.println("\nCube after scrambling:");
         cube.printCube();
     }
 }
