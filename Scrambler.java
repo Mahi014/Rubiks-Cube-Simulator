@@ -9,7 +9,7 @@ public class Scrambler {
     private List<String> moveHistory = new ArrayList<>();
     private Random rand = new Random();
     public void scramble(Cube cube, int numMoves) {
-        moveHistory.clear();//fresh start
+        moveHistory.clear();//new start
         for (int i = 0; i < numMoves; i++) {
             String move = MOVES[rand.nextInt(MOVES.length)];
             applyMove(cube, move);
